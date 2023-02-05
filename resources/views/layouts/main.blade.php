@@ -69,7 +69,7 @@
                             </li>
 
                             <li>
-                                <a href="{{ route('post.create') }}" title="Kullanici Talep Olustur">
+                                <a href="{{ route('Post.create') }}" title="Kullanici Talep Olustur">
                                     <span class="nav-link-text">Kullanici Talep Olustur</span>
                                 </a>
                             </li>
@@ -83,7 +83,7 @@
                             </li>
 
                             <li>
-                                <a href="{{ route('post.create') }}" title="Kullanici Talep Olustur">
+                                <a href="{{ route('Post.index') }}" title="Kullanici Talep Olustur">
                                     <span class="nav-link-text">Kullanici Talep Listem</span>
                                 </a>
                             </li>
@@ -99,7 +99,7 @@
                             </li>
 
                             <li>
-                                <a href="{{ route('post.index') }}" title="Kullanici Talep Listesi">
+                                <a href="{{ route('Post.index') }}" title="Kullanici Talep Listesi">
                                     <span class="nav-link-text">Kullanici Talep Listesi</span>
                                 </a>
                             </li>
@@ -237,7 +237,7 @@
 
                                 <div class="dropdown-divider m-0"></div>
 
-                                <a href="{{ route('profile.show', auth()->user()->id) }}" class="dropdown-item" data-toggle="modal">
+                                <a href="{{ route('Profile.show', auth()->user()->id) }}" class="dropdown-item" >
                                     Profil Bilgileri
                                 </a>
 

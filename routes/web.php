@@ -21,7 +21,7 @@ Route::get('/', function () {
 Route::group(['namespace' => 'App\Http\Controllers', 'prefix' => 'admin', 'middleware' => 'admin'], function () {
 
 
-    Route::get('/profiles/{profile}', 'ProfileController@show')->name('profile.show'); //select
+  //  Route::get('/profiles/{profile}', 'ProfileController@show')->name('profile.show'); //select
 
 
     Route::get('/posts', 'Admin\Post\IndexController')->name('post.index'); //select
@@ -82,14 +82,19 @@ Route::group(['namespace' => 'App\Http\Controllers', 'prefix' => 'admin', 'middl
 });
 
 Route::group(['namespace' => 'App\Http\Controllers\User', 'prefix' => 'user', 'middleware' => 'user'], function () {
-    Route::get('/posts/create', 'Post\CreateController')->name('post.create');
-    Route::post('/posts', 'Post\StoreController')->name('post.store');
-    Route::get('/posts/{post}', 'Post\ShowController')->name('post.show');
+//    Route::get('/posts/create', 'Post\CreateController')->name('post.create');
+//    Route::post('/posts', 'Post\StoreController')->name('post.store');
+//    Route::get('/posts/{post}', 'Post\ShowController')->name('post.show');
 
     Route::get('/servers', 'Server\IndexController')->name('server.index');
     Route::get('/servers/create', 'Server\CreateController')->name('server.create');
     Route::post('/servers', 'Server\StoreController')->name('server.store');
     Route::get('/servers/{post}', 'Server\ShowController')->name('server.show');
+
+    //yeni eklenenler
+    Route::resource('/Post','Post\PostController');
+    Route::resource('/Profile','Profile\ProfileController');
+
 });
 
 

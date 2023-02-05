@@ -8,10 +8,8 @@
 
                 <div id="panel-1" class="panel">
                     <div class="panel-hdr">
-
-                        <h2>
-                            Profil <span class="fw-300"><i>Düzenleme</i></span>
-
+                        <h2 class="m-0">
+                            Profil
                         </h2>
                         <div class="panel-toolbar">
                             <button class="btn btn-panel waves-effect waves-themed" data-action="panel-collapse"
@@ -25,79 +23,70 @@
                     <div class="panel-container show">
                         <div class="panel-content">
                             <div class="panel-content">
-                                <form class="pt-3"
-                                      action="{{route('Profile.update',[$profile->id])}}"
-                                      method="POST"
-                                      enctype="multipart/form-data">
-                                    @csrf
-                                    @method('PATCH')
+                                <form class="pt-3">
                                     <div class="form-row ">
                                         <div class="position-absolute pos-top pos-right col-4 pt-4">
                                             <img src="img/demo/avatars/avatar-admin-lg.png"
                                                  class="rounded-circle shadow-2 img-thumbnail" alt="">
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <label class="form-label">Eposta</label>
+                                            <label for="inputEmail4" class="form-label">Eposta</label>
                                             <input type="email" class="form-control form-control-range rounded-pill"
-                                                   name="email" value="{{auth()->user()->email}}">
+                                                   readonly=" " id="inputEmail4" value="{{auth()->user()->email}}">
 
                                         </div>
                                     </div>
                                     <div class="form-row pt-3">
                                         <div class="form-group col-md-4">
-                                            <label class="form-label " >Kullanıcı Adı</label>
-                                            <input type="text" name="name"
-                                                   value="{{auth()->user()->name}}"
+                                            <label class="form-label " for="simpleinput">Kullanıcı Adı</label>
+                                            <input type="text" id="simpleinput"
+                                                   readonly=" " value="{{auth()->user()->name}}"
                                                    class="form-control form-control-range rounded-pill">
 
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label for="inputPassword4" class="form-label">Password</label>
-                                            <input name="password" type="password" class="form-control form-control-range rounded-pill"
-                                                   id="inputPassword4"
-                                                   >
+                                            <input type="password" class="form-control form-control-range rounded-pill"
+                                                   readonly=" " id="inputPassword4" value="{{auth()->user()->getAuthPassword()}}">
                                         </div>
                                     </div>
                                     <hr class="border-faded">
                                     <div class="form-row">
                                         <div class="form-group col-md-4">
                                             <label class="form-label " for="simpleinput">Ad</label>
-                                            <input type="text" id="simpleinput" name="fname"
-                                                   value="{{$profile->fname}}"
+                                            <input type="text" id="simpleinput"
+                                                   readonly=" " value="{{$profile->fname}}"
                                                    class="form-control form-control-range rounded-pill">
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label for="inputPassword4" class="form-label">Soyad</label>
-                                            <input name="lname" class="form-control form-control-range rounded-pill"
-                                                   id="inputPassword4" value="{{$profile->lname}}">
+                                            <input class="form-control form-control-range rounded-pill"
+                                                   readonly=" " id="inputPassword4" value="{{$profile->lname}}">
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <label for="inputPassword4" class="form-label">Telefon</label>
-                                            <input name="phone" class="form-control form-control-range rounded-pill"
-                                                   id="inputPassword4" value="{{$profile->phone}}">
+                                            <input  class="form-control form-control-range rounded-pill"
+                                                   readonly=" " id="inputPassword4" value="{{$profile->phone}}">
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group col-md-5">
                                             <label class="form-label pt-4" for="example-select">Müdürlük</label>
-                                            <select name="mudurluk" class="form-control form-control-range rounded-pill">  <option>1</option></select>
+                                            <input class="form-control form-control-range rounded-pill"
+                                                   readonly=" " >
                                         </div>
                                         <div class="form-group col-md-5">
                                             <label class="form-label pt-4" for="example-select">Daire</label>
-                                            <select name="daire" class="form-control form-control-range rounded-pill" placeholder="{{$profile->daire->name}}">
-{{--                                                <option></option>--}}
-                                            </select>
-
+                                            <input class="form-control form-control-range rounded-pill"
+                                                   readonly=" " value="{{$profile->daire->name}}">
                                         </div>
                                     </div>
 
                                     </hr>
                                     <div class="d-flex justify-content-end pt-2">
-                                        <button type="submit"
-                                                class="btn btn-primary btn-pills waves-effect waves-themed">Düzenle
-                                        </button>
+                                        <a type="button" href="{{route('Profile.edit',[$profile->id])}}" class="btn btn-primary btn-pills waves-effect waves-themed">Düzenle</a>
                                     </div>
                                 </form>
                             </div>

@@ -15,6 +15,8 @@
         <th>Talep Edilme Sebebi</th>
         <th>Aciklama</th>
         <th>Talep Tarihi</th>
+        <th>Durumu</th>
+        <th>Düzenleme</th>
     </tr>
 @endsection
 
@@ -31,6 +33,8 @@
             <td>{{ $server->reason}}</td>
             <td>{{ $server->description}}</td>
             <td>{{ $server->created_at }}</td>
+            <td>{{ $server->status->name }}</td>
+            <td><button class="btn btn-primary waves-effect waves-themed">Düzenle</button></td>
         </tr>
     @endforeach
 @endsection
@@ -47,5 +51,8 @@
         <th>Talep Edilme Sebebi</th>
         <th>Aciklama</th>
         <th>Talep Tarihi</th>
+        <th>Durumu</th>
+        <th>Düzenleme</th>
+
     </tr>
 @endsection
